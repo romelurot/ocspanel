@@ -28,7 +28,7 @@ fi
 # go to root
 cd
 
-MYIP=$(wget -qO- ipv4.icanhazip.com);
+MYIP=$(wget -qO- ipv4.icanhazip.com)
 
 #https://github.com/adenvt/OcsPanels/wiki/tutor-debian
 
@@ -38,7 +38,7 @@ echo "I need to ask some questions before starting setup"
 echo "You can leave the default option and just hit enter if you agree with the option"
 echo ""
 echo "First I need to know the new password of MySQL root user:"
-read -p "Password : " -e -i romelurot DatabasePass
+read -p " Database Password: " -e -i romelurot DatabasePass
 echo ""
 echo "Finally, name the Database Name for OCS Panels"
 echo " Please, use one word only, no special characters other than Underscore (_)"
@@ -124,7 +124,8 @@ service nginx restart
 
 apt-get -y install zip unzip
 cd /home/vps/public_html
-wget $source/OCS.zip
+cd /home/vps/public_html
+wget https://raw.githubusercontent.com/romelurot/ocspanel/master/OCS.zip
 unzip OCS.zip
 rm -f OCS.zip
 chown -R www-data:www-data /home/vps/public_html
@@ -156,7 +157,7 @@ echo "- Database Pass: $DatabasePass"
 echo ""
 echo "Admin Login:"
 echo "- Username: anything you want"
-echo "- Password Baru: anything you want"
+echo "- Enter Password: anything you want"
 echo "- Re-enter New Password: as desired"
 echo ""
 echo "Click Install and wait for the process to finish, go back to terminal and then press [ENTER key]!"
@@ -190,7 +191,7 @@ clear
 echo "=======================================================" | tee -a log-install.txt
 echo "Please login Reseller Panel at http://$MYIP:85" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
-echo "Auto Script Installer OCS Panels Mod by Clrkz"  | tee -a log-install.txt
+echo "Auto Script Installer OCS Panels Mod by romelurot"  | tee -a log-install.txt
 echo "             (http://aimers.co/ - fb.com/aimers)           "  | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "Thanks " | tee -a log-install.txt
