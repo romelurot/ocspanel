@@ -125,9 +125,9 @@ service nginx restart
 apt-get -y install zip unzip
 cd /home/vps/public_html
 cd /home/vps/public_html
-wget https://raw.githubusercontent.com/romelurot/ocspanel/master/OCS.zip
-unzip OCS.zip
-rm -f OCS.zip
+wget https://raw.githubusercontent.com/romelurot/ocspanel/master/ocsreborn.zip
+unzip ocsreborn.zip
+rm -f ocsreborn.zip
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
 
