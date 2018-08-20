@@ -20,29 +20,15 @@ fi
 vps="vps";
 
 if [[ $vps = "vps" ]]; then
-	source="https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master"
+	source="https://raw.githubusercontent.com/romelurot/ocspanel/master"
 else
-	source="https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master"
+	source="https://raw.githubusercontent.com/romelurot/ocspanel/master"
 fi
 
 # go to root
 cd
 
 MYIP=$(wget -qO- ipv4.icanhazip.com);
-: '
-# check registered ip
-wget -q -O daftarip http://188.166.215.119:85/ocs/ip.txt
-if ! grep -w -q $MYIP daftarip; then
-	echo "Sorry, only registered IPs can use this script!"
-	if [[ $vps = "vps" ]]; then
-		echo "Powered by Clrkz"
-	else
-		echo "Powered by Clrkz"
-	fi
-	rm -f /root/daftarip
-	exit
-fi
-'
 
 #https://github.com/adenvt/OcsPanels/wiki/tutor-debian
 
@@ -52,7 +38,7 @@ echo "I need to ask some questions before starting setup"
 echo "You can leave the default option and just hit enter if you agree with the option"
 echo ""
 echo "First I need to know the new password of MySQL root user:"
-read -p "Password baru: " -e -i clrkz DatabasePass
+read -p "Password : " -e -i romelurot DatabasePass
 echo ""
 echo "Finally, name the Database Name for OCS Panels"
 echo " Please, use one word only, no special characters other than Underscore (_)"
@@ -86,7 +72,7 @@ echo 'echo -e "                                                    /"' >> .bashr
 echo 'echo -e "                                                   /"' >> .bashrc
 echo 'echo -e "                                                  /"' >> .bashrc
 echo 'echo -e "welcome to the server $HOSTNAME" | lolcat' >> .bashrc
-echo 'echo -e "Script mod by Clrkz"' >> .bashrc
+echo 'echo -e "Script mod by romelurot"' >> .bashrc
 echo 'echo -e "Type menu to display a list of commands"' >> .bashrc
 echo 'echo -e ""' >> .bashrc
 
@@ -205,7 +191,7 @@ echo "=======================================================" | tee -a log-inst
 echo "Please login Reseller Panel at http://$MYIP:85" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "Auto Script Installer OCS Panels Mod by Clrkz"  | tee -a log-install.txt
-echo "             (http://bytehax.blogspot.com/ - fb.com/143Clarkz)           "  | tee -a log-install.txt
+echo "             (http://aimers.co/ - fb.com/aimers)           "  | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "Thanks " | tee -a log-install.txt
 echo "" | tee -a log-install.txt
